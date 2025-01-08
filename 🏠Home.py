@@ -1,6 +1,7 @@
 #importing library
 import streamlit as sl
 
+
 #tab title and page title
 sl.set_page_config(page_title="Home")
 title = sl.title("Welcome")
@@ -10,6 +11,8 @@ if "story_stage" not in sl.session_state:
     sl.session_state.story_stage = "-1"
     sl.session_state.story_text = "Welcome to the Enchanted Village, a place where every day is filled with wonder and surprises! Today, you find yourself standing at the edge of the village square. Two paths stretch before you, each offering its own peculiar charm."
 
+#list for the placement of the restart column
+stopColumn = [1,1,3]
 
 #function for the ending options
 def endResult():
@@ -21,7 +24,7 @@ def endResult():
         sl.text("")
 
         # reset button
-        colStop, colStop2, colStop3 = sl.columns([1, 1, 3])
+        colStop, colStop2, colStop3 = sl.columns(stopColumn)
         with colStop3:
             restartButton = sl.button("Restart", type='primary')
 
@@ -162,7 +165,7 @@ elif sl.session_state.story_stage == "1a1":
             #option one
             if sl.button("Write a wish with the quill"):
                 sl.session_state.story_stage = "1a1a"
-                sl.session_state.story_text = "As you write, the quill glows brighter, and your wish begins to manifest. You’re transported to a garden where your heart's desire lies hidden. A fox offers to guide you to it if you solve its riddle."
+                sl.session_state.story_text = "As you write, the quill glows brighter, and your wish begins to manifesl. You’re transported to a garden where your heart's desire lies hidden. A fox offers to guide you to it if you solve its riddle."
                 sl.rerun()
 
         with col2:
@@ -357,7 +360,7 @@ elif sl.session_state.story_stage == "1b":
             # option one
             if sl.button("Peer through the telescope."):
                 sl.session_state.story_stage = "1b1"
-                sl.session_state.story_text = "You peer into the telescope and see dazzling constellations, but one star shines brighter than the rest. It pulses gently, drawing you in. Suddenly, you feel the telescope’s magic pulling you toward a decision."
+                sl.session_state.story_text = "You peer into the telescope and see dazzling constellations, but one star shines brighter than the resl. It pulses gently, drawing you in. Suddenly, you feel the telescope’s magic pulling you toward a decision."
                 sl.rerun()
 
         with col2:
@@ -383,7 +386,7 @@ elif sl.session_state.story_stage == "1b1":
             # option one
             if sl.button("Focus on the brightest star."):
                 sl.session_state.story_stage = "1b1a"
-                sl.session_state.story_text = "The star becomes a guiding light, revealing hidden paths within the library. It leads you to a mysterious glowing chest."
+                sl.session_state.story_text = "The star becomes a guiding light, revealing hidden paths within the library. It leads you to a mysterious glowing chesl."
                 sl.rerun()
 
         with col2:
@@ -407,7 +410,7 @@ elif sl.session_state.story_stage == "1b1a":
         col, col1, col2 = sl.columns([1, 3.5, 3.5])
         with col1:
             # option one
-            if sl.button("Open the chest."):
+            if sl.button("Open the chesl."):
                 sl.session_state.story_stage = "1b1a1"
                 sl.session_state.story_text = "Inside, you find a magical mirror that shows the safest routes through the library."
                 sl.rerun()
@@ -1035,3 +1038,9 @@ elif sl.session_state.story_stage == "2b2b1":
 #Option 2b2b2
 elif sl.session_state.story_stage == "2b2b2":
     endResult()
+
+
+col1, col2 = sl.columns([1,3])
+with col2:
+    #option two
+    sl.image("pic.png", width=300)
