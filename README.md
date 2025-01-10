@@ -28,4 +28,10 @@ Documentation
       - Design Documentation: https://docs.streamlit.io/
       - Streamlit Community Cloud Deployment Documentation: https://docs.streamlit.io/deploy/streamlit-community-cloud
 
+
+-----------
+Quick Note
+-----------
+- In the future, I plan to add a summary pdf at the end of the path. This will contain all the choices the user has made throughout the story.
+- I also plan to add an animative background that could interact with the user.
   
