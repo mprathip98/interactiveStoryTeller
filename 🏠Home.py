@@ -4,7 +4,7 @@ import streamlit as sl
 
 #tab title and page title
 sl.set_page_config(page_title="Home")
-title = sl.title("Welcome")
+title = sl.title("Interactive Storyteller")
 
 # assigning variables
 if "story_stage" not in sl.session_state:
