@@ -1043,4 +1043,4 @@ elif sl.session_state.story_stage == "2b2b2":
 col1, col2 = sl.columns([1,3])
 with col2:
     #option two
-    sl.image("pic.png", width=300)
+    sl.image("background.jpg", width=300)
